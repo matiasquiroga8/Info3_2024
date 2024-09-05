@@ -1,12 +1,14 @@
 package PROYECTO2_INFO3.src;
 
+import TrabajandoelOrdenador.OrdenamientoPorShell;
 import PROYECTO2_INFO3.src.Trabajando_elPedido.*;
 
 import java.time.LocalDateTime;
+import java.util.List;
 import java.util.Random;
 import java.util.Scanner;
 
-public class Pedidos {
+public class MainconShell {
     public static void main(String[] args) {
         // Crear una instancia de GestionPedidos01
         GestionPedidos01 gestionPedidos = new GestionPedidos01();
@@ -23,9 +25,23 @@ public class Pedidos {
             gestionPedidos.agregarPedido(pedido);
         }
 
-        // Listar todos los pedidos
-        System.out.println("Lista de Pedidos:");
-        gestionPedidos.listarPedidos();
+        // Obtener la lista de pedidos
+        List<Pedido01> listaPedidos = gestionPedidos.obtenerListaPedidos();
+
+        // Medir el tiempo de ejecución del ordenamiento por Shell
+        long inicioTiempo = System.currentTimeMillis();
+        OrdenamientoPorShell.ordenarPorPrecio(listaPedidos);
+        long finTiempo = System.currentTimeMillis();
+        long tiempoEjecucion = finTiempo - inicioTiempo;
+
+        // Listar todos los pedidos ordenados por precio
+        System.out.println("Lista de Pedidos Ordenados por Precio:");
+        for (Pedido01 pedido : listaPedidos) {
+            System.out.println(pedido);
+        }
+
+        // Imprimir el tiempo de ejecución
+        System.out.println("\nTiempo de ejecución del ordenamiento por Shell: " + tiempoEjecucion + " milisegundos");
 
         boolean continuar = true;
         while (continuar) {
@@ -63,7 +79,11 @@ public class Pedidos {
 
             // Listar pedidos después de la eliminación
             System.out.println("\nLista de Pedidos después de la eliminación (si corresponde):");
-            gestionPedidos.listarPedidos();
+            listaPedidos = gestionPedidos.obtenerListaPedidos();
+            OrdenamientoPorShell.ordenarPorPrecio(listaPedidos);
+            for (Pedido01 p : listaPedidos) {
+                System.out.println(p);
+            }
 
             // Preguntar al usuario si desea eliminar otro pedido
             System.out.print("¿Desea eliminar otro pedido? (Sí/No): ");

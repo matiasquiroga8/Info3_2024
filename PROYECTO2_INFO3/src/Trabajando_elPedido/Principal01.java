@@ -20,7 +20,7 @@ public class Principal01 {
         gestionPedidos.agregarPedido(pedido3);
 
         // Listar todos los pedidos
-        System.out.println("Lista de Pedidos:");
+        System.out.println("Lista de Pedidos Inicial:");
         gestionPedidos.listarPedidos();
 
         // Solicitar al usuario el ID del pedido que desea verificar
@@ -39,24 +39,27 @@ public class Principal01 {
             String respuesta = scanner.nextLine().trim().toLowerCase();
             boolean completado = respuesta.equals("sí") || respuesta.equals("si");
 
-            // Si el pedido está completado, eliminarlo
-            if (completado) {
-                boolean eliminado = gestionPedidos.eliminarPedidoSiCompletado(idPedido);
-                if (eliminado) {
-                    System.out.println("Pedido con ID " + idPedido + " eliminado correctamente.");
-                } else {
-                    System.out.println("No se pudo eliminar el pedido con ID " + idPedido + ". Puede que no esté completado.");
-                }
+            // Marcar el pedido como completado (o no) según la respuesta del usuario
+            pedido.setCompletado(completado);
+
+            // Eliminar el pedido que se indicó como Sí completado
+            boolean eliminado = gestionPedidos.eliminarPedidoSiCompletado(idPedido);
+            if (eliminado) {
+                System.out.println("Pedido con ID " + idPedido + " eliminado correctamente.");
             } else {
-                System.out.println("El pedido con ID " + idPedido + " no está completado y no se eliminará.");
+                System.out.println("El pedido con ID " + idPedido + " no pudo ser eliminado.");
             }
+
+            // Mostrar la lista actualizada de pedidos no completados
+            System.out.println("\nLista Actualizada de Pedidos No Completados:");
+            gestionPedidos.listarPedidosNoCompletados();
+
+            // Mostrar la lista de pedidos eliminados
+            System.out.println("\nLista de Pedidos Eliminados después de la eliminación:");
+            gestionPedidos.listarPedidosEliminados();
         } else {
             System.out.println("Pedido con ID " + idPedido + " no encontrado.");
         }
-
-        // Listar pedidos después de la eliminación
-        System.out.println("\nLista de Pedidos después de la eliminación (si corresponde):");
-        gestionPedidos.listarPedidos();
 
         // Cerrar el scanner
         scanner.close();
