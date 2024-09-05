@@ -17,3 +17,13 @@ Procedimos a realizar los ejercicios , con sus debidos adds , commits y pulls pa
 haciendo uso del comando pull request , para lograr una verificacion y visto bueno de la contraparte del equipo de los hecho en codigo por cada uno de los desarrolladores ,para recien mergearlo a la rama Main.
 
 --------------------------------------------------------------------------------------------------------------------------------------------
+Camino de proyecto 2 : Se comenzó dividiendo el trabajo en pilares de desarrollo para el proyecto:
+Que consta de: -El pilar de Trabajando_elPedido , para luego implementarlo en la clase Pedidos .
+               -El pilar de desarrollo Main que son los tres Main cada uno con su ordenamiento de estudio .
+               -El pilar de TrabajandoelOrdenador, que son las clases de cada ordenamiento , que se usarán en los Main.Cabe aclarar que en estas clases estan incluidas las funciones para tomar los tiempos de ordenamiento , que luego son implementadas en los Main .
+
+Conclusiones para preguntarse: - De los ordenamientos , el quicksort que se esperaba fuera el mas rapido, termino en principio era el mas lento .Por investigacion , se encontro que cuando el quicksort trabaja con una lista que no esta desordenada o muy muy poco desordenada , el metodo se vuelve lento, y su mejor rendimiento es en las condiciones mas adversas posibles , es decir , con listas muy muy grandes y muy muy desordenadas.
+-Cuando se le puso una condicion para que trabajara mas el quicksort , (que fue que los ordenara de mayor a menor , siendo que estaban de menor a mayor originalmente,) se logro que empatará los tiempos con los otros dos metodos en milisegundos.
+Aclaracion: se trabajó con una lista de 100 elementos 
+--------------------------------------------------------------------------------------------------------------------------------------------
+()
