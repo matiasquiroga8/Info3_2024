@@ -10,6 +10,10 @@ import PROYECTO7ejerc6_INFO3.*;
 import PROYECTO8General_INFO3.*;
 import PROYECTO8MonticuloBinario_INFO3.*;
 import PROYECTO8TablaHash_INFO3.*;
+import Proyecto1_Reacursividad.*;
+import Proyecto2_Ordenamiento.*;
+import Proyecto3_PilaYCola.*;
+import Proyecto4_PilaYColaConLista.*;
 
 import java.util.Scanner;
 
@@ -28,7 +32,7 @@ public class MainMenu {
                                 "gestionar la lista de pedidos según diferentes criterios: tiempo de preparación, precio total, y\n" + //
                                 "nombre del cliente.");
                 System.out.println("2 Trabajando_elPedido");
-                System.out.println("2.1 MainconInsercion");
+                System.out.println("2.1 MainconInsercion (ingrese sin el punto)");
                 System.out.println("2.2 MainconQuicksort");
                 System.out.println("2.3 MainconShell ");
             System.out.println("\n");
@@ -64,6 +68,14 @@ public class MainMenu {
             System.out.println("11. PROYECTO8General_INFO3-->TEMA: GENERAL CON LIBRERIAS NATIVAS DE JAVA");
             System.out.println("12. PROYECTO8MonticuloBinario_INFO3-->TEMA: MONTICULO BINARIO");
             System.out.println("13. PROYECTO8TablaHash_INFO3-->TEMA: TABLA HASH");
+
+            System.out.println("SEGUNDO PARCIAL - EJERCICIOS EXTRAS DEL PROFESOR SOBRE RECURSIVIDAD,ORDENAMIENTO,PILA,LISTA,COLA");
+            System.out.println("3.1 Proyecto1_Reacursividad-->TEMA: RECURSIVIDAD (ingrese sin el punto)");
+            System.out.println("3.2 Proyecto2_Ordenamiento-->TEMA: ORDENAMIENTO");
+            System.out.println("3.3 Proyecto3_PilaYCola-->TEMA: Pila y Cola");
+            System.out.println("3.4 Proyecto4_PilaYColaConLista-->TEMA: Pila y Cola con Lista");
+
+
             System.out.println("\n");
 
             System.out.println("0. Salir");
@@ -116,7 +128,21 @@ public class MainMenu {
                     break;
                 case 13:
                     PROYECTO8TablaHash_INFO3.Main.main(args);
-                    break;                
+                    break;         
+                case 31:
+                    Proyecto1_Reacursividad.Main.main(args);
+                    break;         
+                case 32:
+                    Proyecto2_Ordenamiento.Main.main(args);
+                    break;         
+                case 33:
+                    Proyecto3_PilaYCola.Main.main(args);
+                    break;         
+                case 34:
+                    Proyecto4_PilaYColaConLista.Main.main(args);
+                    break;         
+
+
                 case 0:
                     System.out.println("Saliendo...");
                     continuar = false;
